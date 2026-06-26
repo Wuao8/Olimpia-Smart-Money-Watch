@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from engine.smart_money import get_all_signals
+
 app = FastAPI(title="Olimpia Smart Money Watch")
 
 app.add_middleware(
@@ -23,23 +25,11 @@ def home():
 @app.get("/api/live")
 def live():
 
+    signals = get_all_signals()
+
     return {
         "signals": [
-            {
-                "market": "Crypto",
-                "asset": "BTC",
-                "action": "BUY",
-                "size": "25 M$",
-                "who": "-----",
-                "source": "Demo"
-            },
-            {
-                "market": "Stocks",
-                "asset": "AAPL",
-                "action": "BUY",
-                "size": "800 K$",
-                "who": "CEO",
-                "source": "Demo"
-            }
+            vars(signal)
+            for signal in signals
         ]
-    } 
+    }
