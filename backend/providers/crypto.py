@@ -1,5 +1,5 @@
 from models.signal import Signal
-
+ 
 
 def get_crypto_signals():
 
