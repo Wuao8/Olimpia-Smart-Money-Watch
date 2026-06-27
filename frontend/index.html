@@ -1,96 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8"> 
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Olimpia Smart Money Watch</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header>
-
-<h1>OLIMPIA</h1>
-
-<h2>SMART MONEY WATCH</h2>
-
-<p>Following Institutional Capital Worldwide</p>
-
+<header class="header">
+    <h1>OLIMPIA</h1>
+    <p class="subtitle">Smart Money Intelligence Engine</p>
 </header>
 
-<div class="cards">
+<section class="stats">
 
-<div class="card">
+    <div class="card">
+        <h3>Top Signal</h3>
+        <div id="topSignal">--</div>
+    </div>
 
-<h3>Largest Buy Today</h3>
+    <div class="card">
+        <h3>Top Score</h3>
+        <div id="topScore">--</div>
+    </div>
 
-<span id="largestBuy">--</span>
+    <div class="card">
+        <h3>Crypto Signals</h3>
+        <div id="cryptoCount">--</div>
+    </div>
 
-</div>
+</section>
 
-<div class="card">
-
-<h3>Largest Sell Today</h3>
-
-<span id="largestSell">--</span>
-
-</div>
-
-<div class="card">
-
-<h3>BTC Whale</h3>
-
-<span id="btcWhale">--</span>
-
-</div>
-
-<div class="card">
-
-<h3>ETH Whale</h3>
-
-<span id="ethWhale">--</span>
-
-</div>
-
-</div>
+<section class="table-section">
 
 <table>
+    <thead>
+        <tr>
+            <th>Market</th>
+            <th>Asset</th>
+            <th>Action</th>
+            <th>Size</th>
+            <th>Who</th>
+            <th>Source</th>
+            <th>Score</th>
+        </tr>
+    </thead>
 
-<thead>
-
-<tr>
-
-<th>Market</th>
-
-<th>Asset</th>
-
-<th>Action</th>
-
-<th>Size</th>
-
-<th>Who</th>
-
-<th>Source</th>
-
-</tr>
-
-</thead>
-
-<tbody id="tableBody">
-
-</tbody>
-
+    <tbody id="tableBody"></tbody>
 </table>
+
+</section>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
