@@ -1,87 +1,106 @@
-body{
-
-background:#2b2117;
-
-color:#f5d37a;
-
-font-family:Arial;
-
-margin:40px;
-
+body {
+    background: #0b0f14;
+    color: #e6c77a;
+    font-family: Arial, sans-serif;
+    margin: 30px;
 }
 
-header{
-
-text-align:center;
-
-margin-bottom:40px;
-
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-h1{
-
-font-size:60px;
-
-margin:0;
-
+h1 {
+    font-size: 52px;
+    margin: 0;
+    letter-spacing: 6px;
+    color: #f5d37a;
 }
 
-h2{
-
-margin-top:0;
-
-letter-spacing:8px;
-
+h2 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #a88b4a;
 }
 
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-margin-bottom:40px;
-
+.subtitle {
+    font-size: 12px;
+    color: #7c6a3a;
+    margin-top: 5px;
 }
 
-.card{
-
-background:#3b2b1e;
-
-padding:20px;
-
-border:1px solid #c89f3d;
-
-border-radius:10px;
-
-text-align:center;
-
+/* STATS CARDS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
+.card {
+    background: #121a22;
+    border: 1px solid #2c3a4a;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    transition: 0.2s;
 }
 
-th{
-
-background:#5d4326;
-
-padding:15px;
-
+.card:hover {
+    transform: scale(1.02);
+    border-color: #e6c77a;
 }
 
-td{
+.card h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #8ea0b5;
+}
 
-padding:12px;
+.card div {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5d37a;
+}
 
-border-bottom:1px solid #6b563d;
+/* TABLE */
+.table-section {
+    background: #0f141b;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #1e2a36;
+}
 
-text-align:center;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
 
+th {
+    background: #16202b;
+    padding: 12px;
+    color: #8ea0b5;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #1e2a36;
+    text-align: center;
+    color: #d6b45f;
+}
+
+/* ACTION COLORS */
+td:nth-child(3) {
+    font-weight: bold;
+}
+
+tr:hover {
+    background: #111a23;
 }
