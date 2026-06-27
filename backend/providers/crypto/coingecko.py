@@ -11,9 +11,16 @@ def get_crypto_signals():
     }
 
     response = requests.get(
-        f"{COINGECKO_URL}/search/trending",
+        f"{COINGECKO_URL}/coins/markets",
         headers=headers,
-        timeout=20
+        params={
+            "vs_currency": "usd",
+            "order": "market_cap_desc",
+            "per_page": 20,
+            "page": 1,
+            "sparkline": "false"
+       },
+       timeout=20
     )
 
     data = response.json()
