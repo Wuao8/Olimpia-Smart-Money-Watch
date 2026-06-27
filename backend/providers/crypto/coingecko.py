@@ -1,32 +1,40 @@
+import requests
+
+from config.settings import COINGECKO_API_KEY, COINGECKO_URL
 from models.signal import Signal
- 
+
 
 def get_crypto_signals():
 
+    headers = {
+        "x-cg-demo-api-key": COINGECKO_API_KEY
+    }
+
+    response = requests.get(
+        f"{COINGECKO_URL}/search/trending",
+        headers=headers,
+        timeout=20
+    )
+
+    data = response.json()
+
     signals = []
 
-    signals.append(
+    for coin in data["coins"]:
 
-        Signal(
+        item = coin["item"]
 
-            time="LIVE",
-
-            market="Crypto",
-
-            asset="BTC",
-
-            action="BUY",
-
-            size="25 M$",
-
-            who="Wallet -----",
-
-            source="Demo",
-
-            score=94
-
+        signals.append(
+            Signal(
+                time="LIVE",
+                market="Crypto",
+                asset=item["symbol"].upper(),
+                action="WATCH",
+                size="-",
+                who="CoinGecko",
+                source="Trending",
+                score=80
+            )
         )
-
-    )
 
     return signals
