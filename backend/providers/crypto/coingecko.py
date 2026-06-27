@@ -29,17 +29,17 @@ def get_crypto_signals():
 
     for coin in data:
 
-    signals.append(
-        Signal(
-            time="LIVE",
-            market="Crypto",
-            asset=coin["symbol"].upper(),
-            action="WATCH",
-            size=f"${coin['total_volume']:,.0f}",
-            who="CoinGecko",
-            source="Markets",
-            score=80
+        signals.append(
+            Signal(
+                time="LIVE",
+                market="Crypto",
+                asset=coin["symbol"].upper(),
+                action="WATCH",
+                size=f"${coin['total_volume']:,.0f}",
+                who="CoinGecko",
+                source="Markets",
+                score=80
+            )
         )
-    )
 
     return signals
