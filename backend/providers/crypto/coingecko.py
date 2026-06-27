@@ -3,6 +3,12 @@ import requests
 from config.settings import COINGECKO_API_KEY, COINGECKO_URL
 from models.signal import Signal
 
+def calculate_score(coin):
+
+    change = coin["price_change_percentage_24h"] or 0
+
+    return int(min(100, 50 + abs(change) * 3))
+
 
 def get_crypto_signals():
 
@@ -31,7 +37,7 @@ def get_crypto_signals():
         
         change = coin["price_change_percentage_24h"] or 0
 
-        score = int(min(100, 50 + abs(change) * 3))
+        score = calculate_score(coin)
 
         signals.append(
             Signal(
